@@ -124,6 +124,74 @@ R/ todavia se ve https
 R/ todavia se ve ssh, ya no dice https
 
 
+# Clase 22: Tags y versiones en Git y GitHub
+
+Los commits
+>## $ git log
+Todos los commits 
+>## $ git log --all
+Vision grafica de los branches
+>## $ git log --all --graph 
+
+>## $ git log --all --graph --decorate --oneline
+
+Para no aprendernos todo este comando utilizamos aliases
+
+>## $ alias arbolito="git log --all --graph --decorate --oneline"
+
+Solo con escribir la palabra arbolito ejecuta el comando
+
+#  Crear Tags
+
+1. Copiar el hash del commit
+
+2. Enviar el siguiente comando
+
+>## $ git tag -a v0.1 -m "mensaje" hash
+
+# Consultar lista de los tags creados
+
+
+>## $ git tag
+
+# A que commite o hash está conectado un tags
+
+>## git show-ref --tags
+
+# Mandar tags a internet GitHub
+
+1. Hacer pull
+
+2. Enviar el tag a Github
+
+>## $ git push origin --tags
+
+3. Listo en github en branches tambien tenemos los tags
+
+# Borra tags
+
+por la terminal
+
+1. Consultar los tags
+
+>## $ git tag
+
+2. Borrar
+
+>## $ git tag -d 'tagAborrar'
+
+3. Pull
+
+4. push para subir los tags pero no se borra en git Hub, no se borra porque lo podemos utilizar como release
+
+5. para borrarlo
+
+>## $ git push origin :refs/tags/´tagAeliminar´
+
+
+
+
+
 
 
 
