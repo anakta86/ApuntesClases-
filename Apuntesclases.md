@@ -188,7 +188,7 @@ por la terminal
 
 >## $ git push origin :refs/tags/´tagAeliminar´
 
-
+# Clase 23: Manejo de ramas en GitHub
 
 
 
