@@ -190,6 +190,75 @@ por la terminal
 
 # Clase 23: Manejo de ramas en GitHub
 
+cuales ramas exiten y cuales han sido su historia
+
+>## $ git show-branch
+
+Mas datos historia de cada una de las ramas
+
+>## $ git show-branch --all
+
+Visualizacion en un software instalado por defecto
+
+>## $ gitk
+
+Cada rama se debe subir al Git Hub ubicandonos en la rama y hacer pull y hacer push
+
+# Clase 24: Configurar multiples colaboradores en un repositorio de github
+
+1. Nueva persona en la empresa
+
+* Tener intalado gitbash en el computador, configurado con su correo
+* Tener cuenta en GitHub con el correo registrado en git
+* Entrar al repositorio de GitHub del trabajo
+
+># https://github.com/anakta86/ApuntesClases-
+
+* Entramos a clonar por HTTPS o por SSH, copiando el link
+* En git ingresa el siguiente comando
+
+># $ git clone https://github.com/anakta86/ApuntesClases-.git
+
+Si el repositorio es plublico lo permite clonar sin problemas
+
+* Asi queda clonado el repositorio en el computador
+
+el nombre por defecto es el que está en GitHub, pero no hay probleme al cambiarlo
+
+
+Realiza actualizaciones en uno de los documentos
+
+* Realiza todo el ciclo de git, puede hace pull a las ramas, ver los commits
+
+* Al querer realizar push pide correo y contraseña, al dar enter me indica que no es posible, por que el jefe no le dio acceso
+
+2. Agregar nueva persona en el repositorio
+
+* Ingrear al setting del repositorio
+* Opción collaborater
+* Agregar correo del nuevo colaborador, pero ese colaborador debe tener un email publico, pero pude ser agregario con su nombre de usuario
+* Add Colaborator
+* Copiar invitación y el nuevo colaborador puede ingresar y copiar el link desde el gmail
+
+3. Aceptar Invitación
+* Ya tiene acceso al push al repositorio
+* Colaborar con el equipo de trabajo
+* Puede realizar push ingresando correo y contraseña de git, porque se clonó el repositorio en HTTPS
+
+4. Puede hacer push al repositorio
+
+5. Ver los cambio  haciendo git pull traer lo que hizo el nuevo colaborador
+
+># Divir es trabajo por ramas
+
+
+
+
+
+
+
+
+
 
 
 
