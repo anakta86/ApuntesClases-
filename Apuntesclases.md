@@ -249,7 +249,171 @@ Realiza actualizaciones en uno de los documentos
 
 5. Ver los cambio  haciendo git pull traer lo que hizo el nuevo colaborador
 
-># Divir es trabajo por ramas
+># Dividir el trabajo por ramas
+
+
+# Clase 25: Flujo de trabajo profesional: Haciendo merge de ramas de desarrollo a master
+
+1. Crear dos branches para dividir el trabajo en diferentes partes del proyecto
+
+2. Cambiamos de ramas con el siguiente comando
+
+># $ git checkout ´Nombre de la rama´
+
+># Agregar imagenes al repositorio no es buen practica porque es un archivo binario, la forma de agregarlo es con el siguiente comando
+
+># $ git add imagenes/gragon.png
+
+3. Realizar cambio y hacer commit, hacemos pull y push de la rama correspondiente
+
+4. Vemos los cambios en GitHub
+
+># Entre mas archivos binarios mas va pesar el respositorio ademas no va identificar facilmente los cambios realizados, y no actulizar cambios realizado a estos archivos pero si lo actualiza, para forzar esa actualización en win Ctrol F5  o Ctrol Shif R para actualizar cache
+
+5.realizo cambios en dos ramas diferentes dos usuario diferentes 
+
+
+## Hacer Merge de las ramas
+
+1. Revisar historias de ramas y los cambios en GitHub
+
+2. En gitBash traer los cambios realizados en otras ramas por medio de pull
+
+3. Fusionar las ramas
+
+* Ubicarme en la rama en la que quiero fusinar los cambios en este caso master
+
+* Hacer merge de la primera rama
+
+># $ git merge nombre de la rama
+
+* Realiza el merge al indicar el mensaje
+
+* Actualizar master a internet pero primero haciendo el pull y lusego push
+
+* Hacer el mismo procedimiento con las otras ramas
+
+
+# Clase 26:  Flujo de trabajo profesional con Pull requests
+
+># Aplicado generamente cuando don desarrolladores  externos, es decir trabajan por fuera de la compañia en el proyecto
+
+># Generalmente la rama master es bloqueada
+
+Antes de realizar merge al master debe haber un *code review*
+
+Pull request estado intermedio antes de realizar el merge, permite que otros miembros del equipo miren los cambios realizados y les gusta aprobarlos, despues probados en stage se pruede hacer otro pull reques a master produccipon 
+
+En GitLab, se llama MR
+
+# Clase 27: Utilizando Pull Request en GitHub
+
+1. Hacer cambios para corregir erores por ejemplo de escritura en una nueva rama
+
+* Git pull de master
+* Crear nueva rama llamada fix-typo
+* Hacer git checkout hacia fix-typo
+* Hacer el cambio
+* Subir a GitHub con push origin de esa rama que creamos
+* Hacer commit del cambio realizado
+* Git push origin fix-type
+
+2. Crear pull request en Github para fusionar la rama conmaster
+
+* Seleccionamos la rama fix-typo en GitHub
+* Seleccionamos New pull request
+* Seleccionamos comparar master con fix-typo o en compare & pull request me permite especificar mas detalle
+* En compare & pull request permite agregar personas que revisen 
+* Crar pull request para que otra persona lo revise
+
+3. Revisar y aceptar pull request
+
+* Review changes, comentar aprobar o solicitar cambios
+* Aprobar los cambios checkbox listo
+* Realizar merge pull Request
+
+4. Realizar pull request y verificar cambios realizados en master
+
+# Clase 28: Creando un Fork, contribuyendo a un repositorio
+
+Aportar a un proyento cuando no es un colaborador en el proyecto
+
+
+## Cuando no es un calaborador
+
+Fork: tenedor 
+
+1. hacer un fork es tomara una copia del proyecto, solo lo es permitido para proyecto publico
+
+2. GitHub clonar proyecto
+># $ Git clone y el link url
+
+3. New pull request, abre uanventana para camparar las ramas master por medio de fork
+
+4. Create pull request: es como hacer un commit intermedio solicitar aceptar el merge
+
+5. Esperar que acepten los cambios
+
+## Jefe aceptar la colaboración al proyecto
+
+1. En el home puede ver las acciones realizadas al proyecto, y las notificaciones
+
+2. En notificaciones veo el pull request con el detalle
+
+3. Review lo puedo aprobar  con un mensaje
+
+4. Confirmar el merge
+
+5. Fusionado en master y reviso lo realizado
+
+El fork se va quedando atras si quiere esta igual al master originar, debe traerse los cambios
+
+># Traer cambios en master hacia el respositorio del contribuyener no colaborador
+
+1. Una forma en GitHub es realizar pull request desde master original hasta el master del fork
+
+2. Forma dos en git realizar lo siguiente:
+
+* Ubicarme en la carpeta en en git status me doy cuenta que estoy en la rama master
+
+* Copiar el link del proyecto original
+
+* Git remote add upstream y copio el link (upstream es opcional puede ser otra cosa)
+Git remote -v ( vemos que hay una nueva rama para el repositorio remoto)
+
+* Hacer Git pull de upstream master y enter: traemos todo los cambios de master
+
+* Git commit -am "mensaje"
+
+* git pull origin master
+
+# Clase 29: Haciendo deployment a un servidores
+
+# Clase 30: Hazme un pull request
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
