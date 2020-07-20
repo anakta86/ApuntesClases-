@@ -1,3 +1,5 @@
+https://i.imgur.com/crJC9GI.png
+
 # Indice
 
 **18. GitHub**
@@ -412,7 +414,9 @@ base de datos
 
 5. Git pull y Git push
 
+Subir imagenes
 
+imgur.com/
 
 
 
