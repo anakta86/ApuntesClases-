@@ -391,6 +391,31 @@ Git remote -v ( vemos que hay una nueva rama para el repositorio remoto)
 
 # Clase 30: Hazme un pull request
 
+# Clase 31: Ignorar archivos en el repositorio con .gitignore
+
+Se deben ignorar 
+contraseñas
+imagenes o archivos binarios
+base de datos
+
+1. Crear archivo .gitignore en la raiz del proyecto
+
+2. En este archivo escribimos la lista de los archivos que vamos a ignorar
+
+*.jpg   
+
+* significa que todo tipo de archivo en esta extensión
+
+3. Git add .gitignore
+
+4. Commit
+
+5. Git pull y Git push
+
+
+
+
+
 
 
 
