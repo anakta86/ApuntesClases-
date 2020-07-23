@@ -1,4 +1,4 @@
-https://i.imgur.com/crJC9GI.png
+![](https://i.imgur.com/crJC9GI.png)
 
 # Indice
 
@@ -417,6 +417,55 @@ base de datos
 Subir imagenes
 
 imgur.com/
+
+
+# Clase 32: Readme.md es una excelente práctica
+
+Realizar readme en markdown
+
+# Clase 33: Sitio web público con GitHub Pages
+
+Realizar una pagina 
+
+1. Entramos a GitHub Pages
+
+2. Entrar a GitHub crear un repositorio nuevo que tenga tu nombre de usuaario
+
+3. Copiar url con llaves ssh ir al consola y ubicarse en el home
+
+4. enviar el siguiente comando y copiar la url
+
+># $ git clone git@github.com:anakta86/anakta86.git
+
+5. Crear nuevo archivo llamado index.html con tipico archivo de prueba
+
+># code index.html
+
+6. pull a orgin master y ya tenemos el archivo intex.html en el nuevo reposidtorio anakta86
+
+7. Configurara que el repositorio es el que va a quedar como pages
+
+* Vamos a setting del repositorio
+* opción GitHub Pages
+* en source cambiamos none por master branches
+
+8. Listo tenemos la url de la pagina
+
+9. Para que la pagina quede en la raiz se hacen los siguiente pasos 
+
+* Cambiar el nombre del repositorio a anakta.github.io en setting del respositorio y rename
+
+* Verificar en setting y ya la url está en la raiz
+
+
+7. Ingresamos a la siguiente pagina
+
+anakta86.github.io
+
+# Clase 34: Git Rebase: reorganizando el trabajo realizado
+
+hdhdhdh
+
 
 
 
