@@ -464,7 +464,81 @@ anakta86.github.io
 
 # Clase 34: Git Rebase: reorganizando el trabajo realizado
 
-hdhdhdh
+Es una mala practica no se debe usar, aunque se puede usar en repositorios local pero aun asi no se debe hacer, ya que es un parche
+
+Con *rebase* puedes escoger todos los cambios confirmados en una rama y ponerlos sobre otra 
+
+1. tener una rama master (agregar una linea y lo agregamos en master por commit)
+
+2. Creamos nueva rama 
+
+3. pasamos de la rama master a la rama de exprimento por checkout (agregamos otra linea y lo subimos a la nueva rama con un commit)
+
+4. Agregamos otra linea en esta nueva rama y lo agregamos conun commit
+
+5. Checkout a master  y solo existe lo que agregamos a master
+
+5. Checkout a la otra rma   y existe las tres lineas incluyendo la de master
+
+6. La idea es que lo de la rama nueva esté en master si dejar rastro de esta nueva rama 
+
+7.  Esto se hace de la siguiente manera:
+
+* Pasar lo de master en la otra rama 
+
+Dentro de la rama que voy a eliminar y llevar sus commits a master
+
+># $ git rebase master
+
+Volvemos a la rama master y vamos agregar un commit adicional 
+
+volvemos a la otra rama
+
+Dentro de la rama que voy a eliminar y llevar sus commits a master
+
+># $ git rebase master
+
+Queda que la rama nueva tiene todo lo de master, cambia la historia de donde arancó el branchs 
+
+* Pasar lo de la nueva rama a master
+
+Dentro de la rama master y llevar sus commits a la otra rama
+
+># $ git rebase otra rama
+
+se tiene todo en la rama master 
+
+Existe la rama experimento pero siempre ha tenido lo de master
+
+a nivel de historia es como si fueran los mismos commit en la misma rama
+
+ya podemos borrar la rama sin que pase nada
+
+># git branch -D la otra rama
+
+y se elimina
+
+># primero rebase en la rama donde hubo los cambios 
+
+># segundo rebase a la rama final la que va a quedar
+
+no queda historia y se sabe que se hizo y si el master avanzo mucho puede generar muchos conflictos
+
+# Clase 35: Git stash: Guardar cambios en memoria y recuperarlos después
+
+Sirve para guardar cambios realizado en staging sin realizar el commit, por que no requiere rama o porque si realizo el commit en ese momento podria tener conflictos
+
+># git stash 
+
+DEspues de realizar un cambio y realizo git status y se ve la modificacion con este comando lo recupera, volve al estado anterior, dejando lo otro guardado, para visualizar esos cambios los listo con el siguiente comando
+
+># git stash list
+
+
+
+># git stash pop
+
+Vuelve a como estaba antes y cotrol z y queda original sin cambio por agregar
 
 
 
