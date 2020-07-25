@@ -482,7 +482,7 @@ Con *rebase* puedes escoger todos los cambios confirmados en una rama y ponerlos
 
 6. La idea es que lo de la rama nueva esté en master si dejar rastro de esta nueva rama 
 
-7.  Esto se hace de la siguiente manera:
+7. Esto se hace de la siguiente manera:
 
 * Pasar lo de master en la otra rama 
 
@@ -530,15 +530,283 @@ Sirve para guardar cambios realizado en staging sin realizar el commit, por que 
 
 ># git stash 
 
-DEspues de realizar un cambio y realizo git status y se ve la modificacion con este comando lo recupera, volve al estado anterior, dejando lo otro guardado, para visualizar esos cambios los listo con el siguiente comando
+Después de realizar un cambio y realizo git status y se ve la modificacion con este comando lo recupera, volve al estado anterior, dejando lo otro guardado, para visualizar esos cambios los listo con el siguiente comando
 
 ># git stash list
 
+Lista los que tengo con el comando git stash que son WIP
 
 
 ># git stash pop
 
 Vuelve a como estaba antes y cotrol z y queda original sin cambio por agregar
+
+
+## Guardar mis cambios y ponerla en una rama 
+
+1.  Realizar un cambio
+
+># $ git stash
+
+># $ git stash list
+
+2. Veo el WIP
+
+3. Poner ese stash en una rama
+
+># $ git stash branch NombreDeLaRama
+
+4. Crea automaticamante la rama y me ubica allí y el archivo está modificado
+
+5. Adicionar y crear el commit
+
+># $ git commit -am "mensaje del cambio"
+
+6. Ya el cambio se encuentra en la nueva rama sin modificar master
+
+## Lo que tendo en stash lo quiero borrar
+
+1. Tengo cambios que quiero deshacer
+
+2. $ git stash queda en un WIP pero quiero borrar esto y master queda como estaba original master 
+
+3. $ git stash list con el WIP
+
+4. Para borrar este WIP envio el siguiente comando
+
+># $ git stash drop
+
+5. Ya no exite el WIP 
+
+
+
+# Clase 36: Git Clean: Limpia tu proyecto de archivos no deseados
+
+1. Cree varios archivos que en realidad no necesito y no los he agregado a staging, con el siguiente comando simulo los archivos que serán borrados:
+
+># $ git clear --dry-run
+
+2. Autorizar borrar todo lo que simuló, lista de los archivos del comando anterior
+
+># $ git clear -f
+
+3. Veo que no borró algo css copia por ser carpeta y git lo considera trackeado
+
+4. Ademas las extenciones que estaba en la carpeta .gitignore
+
+
+# Clase 37: Git cherry-pick: trael commits viejos al head de un branch
+
+Puedo ir avanzando en una rama pero necesito en master uno de estos cambios de la rama para ello se utiliza el comando que se llama cherry pick
+
+1. Agregar cambio en un archivo estando en master
+
+2. voy a guardar este cambio 
+
+># $ git stash
+
+># $ git stash branch "NuevaRama"
+
+3. En la nueva rama 
+
+># $ git commit -am "mensaje"
+
+4. Agregar otro cambio en esta nueva rama y los agrego con un commit a la rama 
+
+5. Agregar otro cambio en esta nueva rama y los agrego con un commit a la rama 
+
+6. Necesito traer uno de los cambios realizados a la nueva rama en master
+
+* Ver cual es el commit que necesito que está en la nueva rama y copio el hash del commit 
+
+* Ir al master y desde allí:
+
+># $ git cherry-pick CopiarElHash
+
+7. Queda un commit viejo a la rama master, sin necesidad de hacer commit impediatamente queda en el Head
+
+8. ya puedo hacer pull y push a origin en history está el commit que agregamos a master y parece que el commit se hubiera realizado en master sabiendo que fue realizado en otra rama
+
+9. Ya finalizamos fusionado las dos ramas va tener conflicto porque esta la misma linea en master y en la nueva rama
+
+10. Soluciono los conflictos realizo el commit con los conflictos ya solucionados
+
+11. de nuevo pull y push al origin
+
+># cherry pick es una mala practica porque estás recostruyendo la historia, y se puede realizar en cualquier rama
+
+# Clase 38: Reconstruir commit en Git  con amend
+
+A veces se hace un commit y no se queria mandar por que faltaba algo mas, lo podemos solucionar con el siguiente comando 
+
+1. tenemos un commit con un cambio
+
+2. pero me falto algo 
+
+3. Realizo el cambio que me faltaba
+ y lo agrego con add
+4. Hacer el siguiente comando para añadir el cambio
+
+># $ git commit --amend
+
+Este comando adiciona el cambio al commit anterior y me pregunta si quiero cambiar el texto o mensaje de ese commit
+
+5. Los cambios quedaron en el primer commit
+
+# Clase 39: Git Reset y Reflog: úsese en caso de emergencia
+
+Que pasa cuando todo se daña y no sabemos que hacer 
+
+1. Ejecutar el siguiente comando
+
+># $ git reflog
+
+Con este comando puede ver todo, principalmente me interesa los head que han ido muriendo 
+
+2. Buscar en el listado el head que tenia todo correcto y copio el hash de head{5}  y lo copio
+
+3. envio el siguiente comando 
+
+># $ git reset --soft(mantiene lo que está pendiente por un commit) o --Hard(resetea todo) 
+
+volver a trae esa posición donde estabamso antes
+
+># # git reset copiamosElHashHead{} 
+
+Esto lo realiza pero antes de generar el commit
+
+># $ git reflog
+
+para visualizar el head que corresponde y vamos a realizar 
+
+># $ git reset --HARD CopiamoselHashDelcommit
+
+y todo vuelve a la normalidad y no queda evidencia de lo sucedido por eso es tan peligroso, solo debe usuarse en caso de emergencia
+
+# Clase 40: Buscar en archivos y commits de Git con Grep y log
+
+Permite buscar en git cualquier palabra dentro de tu repositorio
+
+># $ git grep Palabra
+
+Permite busar en git cualquier palabra e indicar la linea
+
+># $ git grep -n Palabra
+
+Permite contar la cantidad de veces que una palabra ocurre
+
+># $ git grep -c Palabra
+
+para buscar algo en cogigo que no reconozga git lo colocamos entre commillas ejemplo "<p>"
+
+* Para buscar directamente en git en los commit realizamos los siguiente comandos
+
+># $ git log -S "palabra"
+
+# Clase 41: Comandos y recursos colaborativos en Git y GitHub
+
+* Ver cuantos commits ha hecho cada miembro del equipo
+
+El siguiente es un log por cada miembro
+
+># $ git shortlog   
+
+Cantidad de commit por cada miembro
+
+># $ git shortlog -sn
+
+Todos los commit por cada miembro hasta los que han sido eliminados
+
+># $ git shortlog -sn --all
+
+Todos los commit sin contar los merges
+
+># $ git shortlog -sn --all --no-merges
+
+
+## registrar comandos anteriores como alias 
+
+Crear comando stats y que ejecute el comando anterior
+
+># $ git config --global alias.stats "shortlog -sn --all --no-merges"
+
+Ejecutar el comando solo escribiento
+
+># $ git stats
+
+## Saber quie hizo que 
+
+># git blame NombreDelArchivo
+
+ver esto mejor:
+
+># git blame -c NombreDelArchivo
+
+## Quien modificó entre lineas 
+
+># git blame NombreDelArchivo -L35,53
+
+Ver esto mejor
+
+># git blame -c NombreDelArchivo -L35,53
+
+## como vemos ramas locales y ramas remotas
+
+* Ver ramas actuales
+
+># $ git branch
+
+* Ver ramas remotas
+
+># $ git branch -r
+
+* Ver tanto ramas locales como remotas
+
+># $ git branch -a
+
+Blanco las locales
+* en la que estamos en ese momento 
+Rojas las remotas
+
+permite ver a cuales les falta hacer push al repositorio remoto por que no existen allí
+
+## En hithub
+
+* pulse es importante ver todo del repositorio
+* Contributors
+* Community
+* traffic
+* Commit por día
+* Codefrequency
+* Alert
+* Network
+* Fork
+
+# Clase 42: Tu futuro con Git y GitHub
+
+finalizado el curso
+
+siguiente paso:
+
+Curso gitlab
+* Manage
+* Plan 
+
+Curso de DevOps con GitLab
+
+curso profesional de DevOps
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
